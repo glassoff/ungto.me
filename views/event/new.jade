@@ -1,0 +1,28 @@
+
+div.col-lg-8.col-lg-offset-2
+  h2 Создать событие
+  div.well
+    form.form-horizontal(action="", method="post")
+      div.form-group
+        label.col-lg-3.control-label Название события
+        div.col-lg-9
+          input.form-control(name="title", placeholder="Title")
+          div.help-block Например: blah blah
+      div.form-group
+        label.col-lg-3.control-label Ваше имя
+        div.col-lg-9
+          input.form-control(name="owner_name", placeholder="Name")
+      div.form-group
+        label.col-lg-3.control-label Email
+        div.col-lg-9
+          input.form-control(name="owner_email", placeholder="Email")
+      div.form-group
+        div.col-lg-offset-3.col-lg-9
+          div.checkbox
+            |Is member
+            input(name="owner_is_member", type="checkbox", placeholder="Is member", checked="checked")
+      div.form-group
+        div.col-lg-offset-3.col-lg-9
+          button.btn.btn-default Добавить событие
+div.clearfix
+

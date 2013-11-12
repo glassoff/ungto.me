@@ -1,0 +1,5 @@
+p Вы были добавлены в список участников события #{event.name}
+p
+  | Посмотреть событие и отредактировать свои данные вы можете по ссылке
+  - var eventUrl = baseUrl + '/event/' + event.uid;
+  a(href="#{eventUrl}") #{eventUrl}

@@ -1,0 +1,27 @@
+!!! 5
+html
+  head
+    title Bootstrap 101 Template
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+    // Bootstrap
+    link(href='/bootstrap/css/bootstrap.min.css', rel='stylesheet', media='screen')
+    // HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+    //if lt IE 9
+    script(src='../../assets/js/html5shiv.js')
+    script(src='../../assets/js/respond.min.js')
+  body
+    div.container
+      div.page-header
+        h1
+          img(src="/img/logo.jpg", height="80")
+          a(href="/")
+            img(src="/img/logo-name.png", height="80")
+        p.lead Организатор тайного дарения подарков
+      block content
+    // jQuery (necessary for Bootstrap's JavaScript plugins)
+  script(src="/js/jquery-1.9.0.min.js")
+  script(src="/js/underscore.js")
+  script(src="/js/backbone.js")
+  // Include all compiled plugins (below), or include individual files as needed
+  script(src='js/bootstrap.min.js')
+  block headjs

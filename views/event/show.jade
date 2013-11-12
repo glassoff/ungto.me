@@ -1,0 +1,70 @@
+extends ../base
+block headjs
+  script(src="/js/app.js")
+
+  script(src="/js/models/person.js")
+  script(src="/js/models/event.js")
+
+  script(src="/js/views/personItem.js")
+  script(src="/js/views/eventShow.js")
+
+  script(src="/js/main.js")
+block content
+  div.event-page#event-el
+    div.col-lg-9
+      .event-page__content
+        h2 #{event.name}
+        div Организатор: #{event.owner.name}
+        br
+
+        div.alert.alert-warning
+          Не забудь указать дополнительную информацию о событии
+
+        div
+          h2 Добавить участника
+          div.well
+            form.form-inline(method="post", action="/event/#{event.uid}/add-person")#new-person-form
+              div.form-group
+                label.control-label Имя
+                input.form-control(name="name", placeholder="Name")
+                //div.help-block Пиши так, чтобы все поняли кто это
+              div.form-group
+                label.control-label Email
+                input.form-control(name="email", placeholder="Email")
+              button.btn.btn-default Добавить
+
+        div.clearfix
+        div
+          h2 Список участников
+          table.table.table-striped.table-hover#persons-list
+            - each person in persons
+              tr
+                td= person.name
+                td= person.email
+
+    div.col-lg-3
+      h2 Информация
+      .event-page__options
+        form(method="post", action="/event/#{event.uid}")
+          div.form-group
+            label Название
+            input.form-control(type="text", placeholder="Name", name="name", value=event.name)
+          div.form-group
+            label Дата жеребьевки
+            input.form-control(type="text", placeholder="Name", name="due_date", value=event.due_date)
+          div.form-group
+            label Дата события
+            input.form-control(type="text", placeholder="Name", name="date", value=event.date)
+          div.form-group
+            label Money limit
+            input.form-control(type="text", placeholder="Money limit", name="moneyLimit", value=event.moneyLimit)
+          div.form-group
+            label Комментарий
+            textarea.form-control(placeholder="Money limit", name="comment", value=event.comment)
+          input(type="hidden", name="_method", value="PUT")
+          button.btn.btn-default Обновить
+
+  script
+    jQuery(function(){
+      $('.contact-btns').button();
+    });

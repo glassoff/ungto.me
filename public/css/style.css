@@ -1,0 +1,13 @@
+.event-page{
+
+}
+    .event-page__content{
+        background: #f5f5f5;
+        padding: 10px;
+        border-radius: 10px;
+    }
+    .event-page__options{
+        background: #f5f5f5;
+        padding: 10px;
+        border-radius: 10px;
+    }
